@@ -165,4 +165,15 @@ Bu kısım, eğitilmiş modeli test etmek için basit bir örnek sunar. Model, k
 # Modelin kullanımı
 messages = [{"role": "user", "content": "Fibonacci dizisini devam ettirin: 1, 1, 2, 3, 5, 8,"}]
 inputs = tokenizer.apply_chat_template(
+    messages,
+    tokenize=True,
+    add_generation_prompt=True,
+    return_tensors="pt",
+).to("cuda")
+```
+
+## Kaynakça
+Bu kod, aşağıdaki Kaggle Notebook'tan referans alınarak geliştirilmiştir:
+```
+https://www.kaggle.com/code/danielhanchen/fixed-kaggle-llama-3-2-1b-3b-conversation
 ```
